@@ -68,12 +68,42 @@
 
 
 <style>
+  /*------------------------------------------------------------------------*/
+  /* @property - Typed Custom Properties */
+  /*------------------------------------------------------------------------*/
+  @property --footer-bg {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f8f9fa;
+  }
+  @property --footer-text {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #333;
+  }
+  @property --logo-opacity {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0.05;
+  }
+  @property --logo-scale-x {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 2.1;
+  }
+  @property --logo-scale-y {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 1.5;
+  }
+
+  
   .nonewnews-footer {
-    background-color: #f8f9fa;
+    background-color: var(--footer-bg);
     font-family: "Times New Roman", Times, serif;
     padding: 0.75rem 2rem;
-    border-top: 0.25rem double #333;
-    color: #333;
+    border-top: 0.25rem double var(--footer-text);
+    color: var(--footer-text);
     overflow: hidden;
   }
   .nonewnews-footer ul {
@@ -111,20 +141,20 @@
   }
 
   .background-logo {
-    transform: scale(2.1, 1.5);
+    transform: scale(var(--logo-scale-x), var(--logo-scale-y));
     position: absolute;
     top: -1rem;
     bottom: 0;
     left: 0;
     right: 0;
-    opacity: 0.05;
+    opacity: var(--logo-opacity);
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 8rem;
-    color: #333;
+    color: var(--footer-text);
   }
 
   .links-section {
@@ -162,7 +192,7 @@
     width: 2rem;
     height: 2rem;
     background-color: #e0e0e0;
-    color: #333;
+    color: var(--footer-text);
     border-radius: 50%;
     transition: background-color 0.2s;
   }
