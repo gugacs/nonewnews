@@ -68,4 +68,31 @@
   .nonewnews-footer a:hover {
     text-decoration: underline;
   }
+
+  .footer-top-area {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 20px;
+  }
+  .links-section {
+    display: flex;
+    justify-content: space-between;
+  }
+  .link-column {
+    text-align: center;
+  }
+  .link-column h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #000;
+  }
+  .link-column li {
+    margin-bottom: 10px;
+  }
+  .link-column a {
+    color: #555;
+    font-size: 14px;
+  }
 </style>
