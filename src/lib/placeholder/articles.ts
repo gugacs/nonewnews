@@ -1,5 +1,5 @@
 import type { Article } from '$lib/types';
-import image from '$lib/assets/images/man-athlete.jpg'
+import image from '$lib/assets/favicon.svg'
 
 export const articles: Article[] = [
 	{
@@ -13,6 +13,7 @@ export const articles: Article[] = [
 			'margin, and other sizing properties—making it a versatile solution for creating dynamic, content-aware\n' +
 			'animations.',
 		img: image,
+		flag: 'main'
 	},
 	{
 		title: 'field-sizing',
@@ -23,6 +24,7 @@ export const articles: Article[] = [
 			'This provides a native, CSS-only way to create form fields that adapt to their value, improving layout\n' +
 			'consistency and user experience without requiring manual resizing.',
 		img: image,
+		flag: 'medium'
 	},
 	{
 		title: '@function',
