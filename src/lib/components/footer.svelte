@@ -221,7 +221,8 @@
   .nonewnews-footer {
     background-color: light-dark(var(--footer-bg-light), var(--footer-bg-dark));
     font-family: "Times New Roman", Times, serif;
-    padding: 0.75rem 2rem;
+    /* !! min() !! - Padding scales with viewport but doesn't exceed max values */
+    padding: min(0.75rem, 2vw) min(2rem, 5vw);
     border-top: 0.25rem double light-dark(var(--border-light), var(--border-dark));
     color: light-dark(var(--footer-text-light), var(--footer-text-dark));
     overflow: hidden;
@@ -246,8 +247,9 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: -2rem;    /* Stretch the separator towards the sides */
-    right: -2rem;   /* Stretch the separator towards the sides */
+    /* !! min() !! - Separator extends based on footer padding */
+    left: calc(-1 * min(2rem, 5vw));
+    right: calc(-1 * min(2rem, 5vw));
     height: 0.1rem;
     background-color: light-dark(var(--separator-light), var(--separator-dark));
   }
@@ -257,7 +259,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    /* !! max() & min() !! - Gap scales but doesn't go below 0.75rem or above 1rem */
+    gap: max(0.75rem, min(1rem, 2vw));
   }
 
   .background-logo {
@@ -273,7 +276,8 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 8rem;
+    /* !! max() & min() !! - Font size scales with viewport but stays between 5rem and 8rem */
+    font-size: max(5rem, min(8rem, 12vw));
     color: light-dark(var(--logo-light), var(--logo-dark));
   }
 
@@ -282,13 +286,15 @@
     justify-content: space-between;
     position: relative;
     z-index: 1;
-    padding: 0 4rem;
+    /* !! min() !! - Padding scales but doesn't exceed 4rem */
+    padding: 0 min(4rem, 8vw);
   }
   .link-column {
     text-align: center;
   }
   .link-column h3 {
-    font-size: 1rem;
+    /* !! max() & min() !! - Font size stays between 0.875rem and 1rem */
+    font-size: max(0.875rem, min(1rem, 2.5vw));
     font-weight: bold;
     text-transform: uppercase;
     color: light-dark(var(--heading-light), var(--heading-dark));
@@ -299,11 +305,14 @@
   }
   .link-column a {
     color: light-dark(var(--link-light), var(--link-dark));
+    /* !! max() & min() !! - Link font size stays between 0.8rem and 0.9rem */
+    font-size: max(0.8rem, min(0.9rem, 2vw));
   }
   
   .social-media {
     display: flex;
-    gap: 1rem;
+    /* !! max() !! - Gap doesn't go below 0.75rem */
+    gap: max(0.75rem, 1.5vw);
   }
   .social-icon {
     display: flex;
@@ -321,7 +330,8 @@
   }
   
   .copyright {
-    font-size: 0.75rem;
+    /* !! max() & min() !! - Font size stays between 0.65rem and 0.75rem */
+    font-size: max(0.65rem, min(0.75rem, 1.8vw));
     color: light-dark(var(--copyright-light), var(--copyright-dark));
     text-align: right;
   }
@@ -330,7 +340,8 @@
   }
   .copyright ul {
     display: flex;
-    gap: 1rem;
+    /* !! max() !! - Gap doesn't go below 0.75rem */
+    gap: max(0.75rem, 1.5vw);
     justify-content: flex-end;
   }
 </style>
