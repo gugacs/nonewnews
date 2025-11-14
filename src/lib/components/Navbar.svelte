@@ -1,23 +1,33 @@
 <script lang="ts">
-  import { Search } from '@lucide/svelte';
+  import { Search, Menu, X } from '@lucide/svelte';
+  let menuOpen = false;
+  const closeMenu = () => {
+    menuOpen = false;
+  };
+  const toggleMenu = () => {
+    menuOpen = !menuOpen;
+  };
 </script>
 
 <div class="header">
   <nav class="navbar">
     <div class="nav-left">
       <a href="/" class="logo">N</a>
+      <button class="burger-button" on:click={toggleMenu} aria-label="Toggle menu">
+        {#if menuOpen}<X size="24" />{:else}<Menu size="24" />{/if}
+      </button>
     </div>
 
-    <div class="links">
-      <a href="/properties">Properties</a>
-      <a href="/selectors">Selectors</a>
-      <a href="/combinators">Combinators</a>
-      <a href="/pseudo-classes">Pseudo-classes</a>
-      <a href="/pseudo-elements">Pseudo-elements</a>
-      <a href="/at-rules">At-rules</a>
-      <a href="/values">Values</a>
-      <a href="/types">Types</a>
-      <a href="/functions">Functions</a>
+    <div class="links" class:open={menuOpen}>
+      <a href="/properties" on:click={closeMenu}>Properties</a>
+      <a href="/selectors" on:click={closeMenu}>Selectors</a>
+      <a href="/combinators" on:click={closeMenu}>Combinators</a>
+      <a href="/pseudo-classes" on:click={closeMenu}>Pseudo-classes</a>
+      <a href="/pseudo-elements" on:click={closeMenu}>Pseudo-elements</a>
+      <a href="/at-rules" on:click={closeMenu}>At-rules</a>
+      <a href="/values" on:click={closeMenu}>Values</a>
+      <a href="/types" on:click={closeMenu}>Types</a>
+      <a href="/functions" on:click={closeMenu}>Functions</a>
     </div>
 
     <div class="ctas">
@@ -44,6 +54,8 @@
 .header {
   display: flex;
   flex-direction: column;
+  container-type: inline-size;
+  width: 100%;
 
   .navbar {
     display: flex;
@@ -51,7 +63,7 @@
     justify-content: space-between;
     padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
     border-bottom: 1px solid #000;
-    background-color: #fff;
+    background-color: #FFF;
     gap: clamp(0.5rem, 2vw, 1rem);
     position: relative;
   }
@@ -70,6 +82,20 @@
       padding-right: 1.25rem;
       border-right: 1px solid #000;
     }
+
+    .burger-button {
+       display: none;
+       background: none;
+       border: none;
+       color: #000;
+       cursor: pointer;
+       padding: 0.25rem;
+       transition: color 0.2s;
+
+       &:hover {
+         color: #000000CC;
+       }
+     }
   }
 
   .links {
@@ -83,7 +109,7 @@
       font-family: 'Arial', sans-serif;
       font-size: clamp(0.6rem, 1.2vw + 0.3rem, 0.75rem);
       font-weight: 900;
-      color: #333;
+      color: #000000CC;
       text-transform: uppercase;
       text-decoration: none;
       padding-right: 0.5rem;
@@ -92,7 +118,7 @@
       transition: color 0.2s;
 
       &:hover {
-        color: #888;
+        color: #000000CC;
       }
 
       &:last-child {
@@ -100,6 +126,7 @@
       }
     }
   }
+
 
   .ctas {
     display: flex;
@@ -117,7 +144,7 @@
       transition: color 0.2s;
 
       &:hover {
-        color: #888;
+        color: #000000CC;
       }
     }
 
@@ -128,7 +155,7 @@
       border-radius: 5rem 0 0 5rem;
       border: 1px solid rgb(38, 92, 192);
       background-color: rgb(38, 92, 192);
-      color: #fff;
+      color: #FFF;
       text-decoration: none;
       text-align: center;
       font-weight: bold;
@@ -194,6 +221,55 @@
         &:hover {
           text-decoration: underline;
         }
+      }
+    }
+  }
+
+  @container (max-width: 1104px) {
+    .navbar {
+      flex-wrap: wrap;
+
+      .burger-button {
+        display: flex;
+      }
+
+      .links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #FFF;
+        border: 1px solid #00000050;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: 100;
+        gap: 0;
+        text-align: center;
+
+        &.open {
+          max-height: 500px;
+          opacity: 1;
+        }
+
+        a {
+          padding: 0.75rem 1rem;
+          border-right: none;
+          border-bottom: 1px solid #000;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @container (max-width: 500px) {
+    .subscribe-button {
+      font-size: 0.65rem;
+      padding: 0.5rem 0.75rem;
+
+      br, span {
+        display: none;
       }
     }
   }
