@@ -1,6 +1,6 @@
-<!-- src/lib/components/footer.svelte -->
+<!-- src/lib/components/Footer.svelte -->
 <script lang="ts">
-  import { Facebook, Twitter, Instagram } from 'lucide-svelte';
+  import { Facebook, Twitter, Instagram } from '@lucide/svelte';
 </script>
 
 
