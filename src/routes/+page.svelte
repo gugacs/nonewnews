@@ -28,12 +28,16 @@
     }
 
 		.article-card {
-				cursor: pointer;
 				padding: 1rem;
-        border-bottom: 0.1em solid black;
+				margin: 1rem;
+				background: #FAFAFA;
+				border-radius: 1rem;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
 
 				&:hover {
-            color: dimgrey;
+            box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+            transform: scale(1.01);
         }
 
 				&.main-article {
