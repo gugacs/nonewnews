@@ -109,7 +109,7 @@
       font-family: 'Arial', sans-serif;
       font-size: clamp(0.6rem, 1.2vw + 0.3rem, 0.75rem);
       font-weight: 900;
-      color: #000000CC;
+      color: #000;
       text-transform: uppercase;
       text-decoration: none;
       padding-right: 0.5rem;
@@ -118,7 +118,7 @@
       transition: color 0.2s;
 
       &:hover {
-        color: #000000CC;
+        color: #00000099;
       }
 
       &:last-child {
@@ -144,7 +144,7 @@
       transition: color 0.2s;
 
       &:hover {
-        color: #000000CC;
+        color: #00000099;
       }
     }
 
@@ -190,13 +190,14 @@
     flex-wrap: wrap;
     align-items: center;
     border-bottom: 1px solid #000;
+    margin: 0 0.5rem;
     padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
     gap: clamp(0.5rem, 2vw, 1rem);
 
     h2 {
       font-family: 'Arial', sans-serif;
       font-size: clamp(0.65rem, 1.2vw + 0.3rem, 0.75rem);
-      font-weight: bold;
+      font-weight: 900;
       text-transform: uppercase;
       color: rgba(145, 37, 28);
       text-wrap: nowrap;
@@ -217,9 +218,10 @@
         text-decoration: none;
         text-transform: uppercase;
         text-wrap: nowrap;
+        font-weight: 600;
 
         &:hover {
-          text-decoration: underline;
+          color: #00000099
         }
       }
     }
@@ -238,18 +240,18 @@
         top: 100%;
         left: 0;
         right: 0;
-        flex-direction: column;
         background-color: #FFF;
         border: 1px solid #00000050;
-        max-height: 0;
         overflow: hidden;
-        opacity: 0;
         z-index: 100;
+        flex-direction: column;
         gap: 0;
+        max-height: 0;
+        opacity: 0;
         text-align: center;
 
         &.open {
-          max-height: 500px;
+          max-height: 32rem;
           opacity: 1;
         }
 
@@ -258,16 +260,17 @@
           border-right: none;
           border-bottom: 1px solid #000;
           width: 100%;
+
+          &:hover {
+            color: #00000099;
+          }
         }
       }
     }
   }
 
-  @container (max-width: 500px) {
+  @container (max-width: 512px) {
     .subscribe-button {
-      font-size: 0.65rem;
-      padding: 0.5rem 0.75rem;
-
       br, span {
         display: none;
       }
