@@ -3,16 +3,23 @@
   import { Facebook, Twitter, Instagram } from 'lucide-svelte';
 </script>
 
+
 <footer class="nonewnews-footer">
   <!------------------------------------------------------------------------>
   <!-- ... footer-top ... -->
   <!------------------------------------------------------------------------>
   <div class="footer-top">
-    <svg class="background-logo" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">NoNewNews</text>
-    </svg>
+    <div class="background-logo" aria-hidden="true">NoNewNews</div>
 
     <div class="links-section">
+      <div class="link-column">
+        <h3>Subscribe Now</h3>
+        <ul>
+          <li><a href="/">Digital Access</a></li>
+          <li><a href="/">Home Delivery</a></li>
+          <li><a href="/">Gift Subscription</a></li>
+        </ul>
+      </div>
       <div class="link-column">
         <h3>Account</h3>
         <ul>
@@ -64,10 +71,10 @@
   .nonewnews-footer {
     background-color: #f8f9fa;
     font-family: "Times New Roman", Times, serif;
-    padding: 40px 60px;
-    border-top: 4px double #333;
-    overflow: hidden;
+    padding: 0.75rem 2rem;
+    border-top: 0.25rem double #333;
     color: #333;
+    overflow: hidden;
   }
   .nonewnews-footer ul {
     list-style: none;
@@ -83,30 +90,41 @@
   
   .footer-top {
     position: relative;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-    margin-bottom: 20px;
+    padding: 0.5rem 0;
+  }
+  .footer-top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -2rem;    /* Stretch the separator towards the sides */
+    right: -2rem;   /* Stretch the separator towards the sides */
+    height: 0.1rem;
+    background-color: #e0e0e0;
   }
   .footer-bottom {
+    padding-top: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
   }
 
   .background-logo {
+    transform: scale(2.1, 1.5);
     position: absolute;
-    inset: 0;
-    z-index: 0;
+    top: -1rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
     opacity: 0.05;
     pointer-events: none;
-  }
-  .background-logo text {
-    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
-    font-size: 100px;
-    fill: #333;
+    font-size: 8rem;
+    color: #333;
   }
 
   .links-section {
@@ -114,35 +132,35 @@
     justify-content: space-between;
     position: relative;
     z-index: 1;
+    padding: 0 4rem;
   }
   .link-column {
     text-align: center;
   }
   .link-column h3 {
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 15px;
     text-transform: uppercase;
     color: #000;
+    margin: 0 0 0.5rem;
   }
   .link-column li {
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
   }
   .link-column a {
     color: #555;
-    font-size: 14px;
   }
   
   .social-media {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
   }
   .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 2rem;
+    height: 2rem;
     background-color: #e0e0e0;
     color: #333;
     border-radius: 50%;
@@ -153,19 +171,16 @@
   }
   
   .copyright {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #666;
     text-align: right;
   }
   .copyright p {
-    margin: 0 0 5px 0;
+    margin: 0 0 0.1rem;
   }
   .copyright ul {
     display: flex;
-    gap: 15px;
+    gap: 1rem;
     justify-content: flex-end;
-  }
-  .copyright a {
-    color: #666;
   }
 </style>
