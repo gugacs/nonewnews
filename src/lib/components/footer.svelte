@@ -71,16 +71,127 @@
   /*------------------------------------------------------------------------*/
   /* @property - Typed Custom Properties */
   /*------------------------------------------------------------------------*/
-  @property --footer-bg {
+  /* Background colors */
+  @property --footer-bg-light {
     syntax: "<color>";
     inherits: false;
     initial-value: #f8f9fa;
   }
-  @property --footer-text {
+  @property --footer-bg-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #1a1a1a;
+  }
+
+  /* Text colors */
+  @property --footer-text-light {
     syntax: "<color>";
     inherits: false;
     initial-value: #333;
   }
+  @property --footer-text-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #e0e0e0;
+  }
+
+  /* Border colors */
+  @property --border-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #333;
+  }
+  @property --border-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #666;
+  }
+
+  /* Separator line colors */
+  @property --separator-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #e0e0e0;
+  }
+  @property --separator-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #333;
+  }
+
+  /* Logo/watermark colors */
+  @property --logo-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #333;
+  }
+  @property --logo-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #666;
+  }
+
+  /* Heading colors */
+  @property --heading-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #000;
+  }
+  @property --heading-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #fff;
+  }
+
+  /* Link colors */
+  @property --link-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #555;
+  }
+  @property --link-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #aaa;
+  }
+
+  /* Social icon background colors */
+  @property --social-bg-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #e0e0e0;
+  }
+  @property --social-bg-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #2a2a2a;
+  }
+
+  /* Social icon hover colors */
+  @property --social-hover-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ccc;
+  }
+  @property --social-hover-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #3a3a3a;
+  }
+
+  /* Copyright text colors */
+  @property --copyright-light {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #666;
+  }
+  @property --copyright-dark {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #999;
+  }
+
+  /* Numeric properties */
   @property --logo-opacity {
     syntax: "<number>";
     inherits: false;
@@ -96,14 +207,23 @@
     inherits: false;
     initial-value: 1.5;
   }
-
   
+  /*------------------------------------------------------------------------*/
+  /* light-dark() - Automatic Theme Switching */
+  /*------------------------------------------------------------------------*/
+  :root {
+    color-scheme: light dark;
+  }
+
+
+  /*------------------------------------------------------------------------*/
+  /*------------------------------------------------------------------------*/
   .nonewnews-footer {
-    background-color: var(--footer-bg);
+    background-color: light-dark(var(--footer-bg-light), var(--footer-bg-dark));
     font-family: "Times New Roman", Times, serif;
     padding: 0.75rem 2rem;
-    border-top: 0.25rem double var(--footer-text);
-    color: var(--footer-text);
+    border-top: 0.25rem double light-dark(var(--border-light), var(--border-dark));
+    color: light-dark(var(--footer-text-light), var(--footer-text-dark));
     overflow: hidden;
   }
   .nonewnews-footer ul {
@@ -129,7 +249,7 @@
     left: -2rem;    /* Stretch the separator towards the sides */
     right: -2rem;   /* Stretch the separator towards the sides */
     height: 0.1rem;
-    background-color: #e0e0e0;
+    background-color: light-dark(var(--separator-light), var(--separator-dark));
   }
   .footer-bottom {
     padding-top: 0.5rem;
@@ -154,7 +274,7 @@
     justify-content: center;
     font-weight: bold;
     font-size: 8rem;
-    color: var(--footer-text);
+    color: light-dark(var(--logo-light), var(--logo-dark));
   }
 
   .links-section {
@@ -171,14 +291,14 @@
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #000;
+    color: light-dark(var(--heading-light), var(--heading-dark));
     margin: 0 0 0.5rem;
   }
   .link-column li {
     margin-bottom: 0.5rem;
   }
   .link-column a {
-    color: #555;
+    color: light-dark(var(--link-light), var(--link-dark));
   }
   
   .social-media {
@@ -191,18 +311,18 @@
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    background-color: #e0e0e0;
-    color: var(--footer-text);
+    background-color: light-dark(var(--social-bg-light), var(--social-bg-dark));
+    color: light-dark(var(--footer-text-light), var(--footer-text-dark));
     border-radius: 50%;
     transition: background-color 0.2s;
   }
   .social-icon:hover {
-    background-color: #ccc;
+    background-color: light-dark(var(--social-hover-light), var(--social-hover-dark));
   }
   
   .copyright {
     font-size: 0.75rem;
-    color: #666;
+    color: light-dark(var(--copyright-light), var(--copyright-dark));
     text-align: right;
   }
   .copyright p {
