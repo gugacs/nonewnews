@@ -75,6 +75,7 @@ export const articles: Article[] = [
 			'browser supports a specific feature. To define more precise support rules, multiple conditions can be\n' +
 			'combined by conjunctions (and), disjunctions (or), and even negations. These support conditions can\n' +
 			'follow either a property-value syntax or a function syntax.',
+		flag: 'medium'
 	},
 	{
 		title: 'popover-open',
@@ -98,6 +99,7 @@ export const articles: Article[] = [
 			'light or dark preference can then be manually enforced or decided based on either the operating system\n' +
 			'settings or via the user agent settings. The example is a slightly modified\n' +
 			'version of the example shown on MDN.',
+		flag: 'medium'
 	},
 	{
 		title: 'text-wrap',
@@ -125,6 +127,8 @@ export const articles: Article[] = [
 			'progress is controlled by scrolling within a container. This opens up new, high-performance possibilities\n' +
 			'for interactive web experiences, such as parallax effects, progress indicators, or fading in elements as they\n' +
 			'enter the viewport.',
+		img: image,
+		flag: 'medium'
 	},
 	{
 		title: 'has()',
@@ -144,6 +148,7 @@ export const articles: Article[] = [
 			'Currently, support is primarily limited to querying CSS custom properties. This makes it possible to\n' +
 			'change the appearance of child elements depending on the value set for a specific custom property on the\n' +
 			'container.',
+		flag: 'medium'
 	},
 	{
 		title: 'Container Size Queries',
