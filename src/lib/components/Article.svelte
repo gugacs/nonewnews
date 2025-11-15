@@ -62,15 +62,11 @@
             text-align: center;
 				}
 
-        .article-header {
-            font-family: Arial, sans-serif;
-        }
 				.article-header:hover {
 						color: #646464;
 				}
 
         .article-paragraph {
-            font-family: Arial, sans-serif;
 						text-overflow: ellipsis;
 						margin: 0 1rem 0 1rem;
             white-space: pre-wrap;
@@ -90,24 +86,23 @@
     }
 
 		.popover-container {
-				width: 75%;
-				height: 40rem;
+				width: 40%;
+        height: 80%;
 				flex-direction: column;
 				justify-content: center;
-        border: 0.25rem solid black;
+        padding: 1rem;
+        border: 2rem solid white;
 				border-radius: 1rem;
         animation: background-animation linear;
         overflow-y: auto;
         scroll-timeline: --popover-scroll-timeline block;
 
 				.popover-header {
-						font-family: Arial, sans-serif;
 						font-size: 2rem;
 						margin: 1rem;
 				}
 
 				.popover-paragraph {
-						font-family: Arial, sans-serif;
 						font-size: 1.5rem;
             white-space: pre-wrap;
 						margin: 0 1rem 0 1rem;

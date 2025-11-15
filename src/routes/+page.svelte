@@ -33,6 +33,7 @@
 <style>
 	:root {
 		color-scheme: light;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	}
 
 	.main-content {
