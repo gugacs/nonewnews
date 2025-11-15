@@ -33,7 +33,13 @@
 <style>
 	:root {
 		color-scheme: light;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	}
+
+  :global(body:has([popover]:popover-open)) {
+    overflow: hidden;
+    pointer-events: none;
+  }
 
 	.main-content {
 		display: flex;

@@ -220,7 +220,6 @@
   /*------------------------------------------------------------------------*/
   .nonewnews-footer {
     background-color: light-dark(var(--footer-bg-light), var(--footer-bg-dark));
-    font-family: "Times New Roman", Times, serif;
     /* !! min() !! - Padding scales with viewport but doesn't exceed max values */
     padding: min(0.75rem, 2vw) min(2rem, 5vw);
     border-top: 0.25rem double light-dark(var(--border-light), var(--border-dark));
