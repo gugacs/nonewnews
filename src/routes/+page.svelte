@@ -1,123 +1,128 @@
 <script lang="ts">
-	import image from '../lib/assets/favicon.svg'
+	import { articles } from '$lib/placeholder/articles';
 	import Article from '$lib/components/Article.svelte';
+	import { SunMoon } from '@lucide/svelte';
 
-	interface Article {
-		title: string;
-		content: string;
-		img?: string;
-		flag?: string;
-	}
+	let lightTheme = true;
 
-	const articles: Article[] = [
-		{
-			title: 'Title1',
-			content: 'LLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n' +
-				'\n' +
-				'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n' +
-				'\n' +
-				'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.\n' +
-				'\n' +
-				'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.\n' +
-				'\n' +
-				'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ',
-			img: image,
-			flag: 'main-article',
-		},
-		{
-			title: 'Title2',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-			img: image,
-		},
-		{
-			title: 'Title3',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-		},
-		{
-			title: 'Titel4',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-		},
-		{
-			title: 'Titel5',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-		},
-		{
-			title: 'Titel6',
-			content: 'LLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n' +
-				'\n' +
-				'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n' +
-				'\n' +
-				'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.\n' +
-				'\n' +
-				'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.\n' +
-				'\n' +
-				'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. ',
-		}
-		,
-		{
-			title: 'Titel7',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-		}
-		,
-		{
-			title: 'Titel8',
-			content: 'This is an example text. This is an example text. This is an example text. This is an example text. This is an example text.',
-		}
-	];
-
+	const toggleTheme = () => {
+		lightTheme = !lightTheme;
+	};
 </script>
 
+<div class="main-content">
+	<div class="theme-settings">
+		<button class="theme-settings__button" on:click={toggleTheme} aria-label="Toggle theme">
+			<SunMoon />
+		</button>
+	</div>
 
-<div class="news-page">
-	{#each articles as article (article.title)}
-		<div class="article-card"
-				 class:main-article={article.flag === 'main-article'}>
-			<Article
-				title={article.title}
-				content={article.content}
-				image={article.img}
-			/>
-		</div>
-	{/each}
+	<div class="article-layout">
+		{#each articles as article (article.title)}
+			<div
+				class="article-card"
+				class:main-article={article.flag === 'main'}
+				class:medium-article={article.flag === 'medium'}
+			>
+				<Article title={article.title} content={article.content} image={article.img} />
+			</div>
+		{/each}
+	</div>
 </div>
 
 <style>
-    .news-page {
-        display: grid;
-        gap: 1rem;
-        padding: 1rem;
-				margin-left: 10rem;
-        margin-right: 10rem;
+	:root {
+		color-scheme: light;
+	}
 
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: masonry;
-    }
+	.main-content {
+		display: flex;
+		flex-direction: column;
+		container-type: inline-size;
+		width: 90%;
+		margin: auto;
 
-    .masonry-item img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+		.theme-settings {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
 
-		.article-card {
+			.theme-settings__button {
+				display: flex;
+				margin: auto 0;
+				background: none;
+				border: none;
 				cursor: pointer;
-				overflow: hidden;
-        border-bottom: solid black;
-				inline-size: auto;
-
-
-				&:hover {
-            color: dimgrey;
-        }
-
-				&.main-article {
-            grid-column: span 2;
-            grid-row: span 2;
-            padding: 2rem;
-            border-right: solid black;
-
-
-        }
+			}
 		}
 
+    .article-layout {
+      padding: 1rem;
+      margin: 0 auto;
+
+      /* fallback for masonry */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .article-card {
+      padding: 1rem;
+      margin: 1rem;
+      background: #fafafa;
+      border-radius: 1rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+
+      &.main-article {
+        grid-column: span 3;
+      }
+
+      &.medium-article {
+        grid-column: span 2;
+      }
+    }
+
+		@supports (display: masonry) {
+			.article-layout {
+        display: masonry;
+				grid-template-rows: masonry;
+			}
+		}
+
+    @container (max-width: 1104px) {
+      .article-layout {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .article-layout .article-card {
+        &.main-article {
+          grid-column: span 2;
+        }
+
+        &.medium-article {
+          grid-column: span 1;
+        }
+      }
+    }
+
+    @container (max-width: 512px) {
+      .article-layout {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .article-layout .article-card {
+        &.main-article {
+          grid-column: span 1;
+        }
+
+        &.medium-article {
+          grid-column: span 1;
+        }
+      }
+    }
+	}
 </style>

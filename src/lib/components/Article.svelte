@@ -49,7 +49,6 @@
     .main-container {
         display: flex;
 				width: 100%;
-				height: 30rem;
         flex-direction: column;
         justify-content: center;
         align-items: center;

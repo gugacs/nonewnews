@@ -56,6 +56,11 @@
   flex-direction: column;
   container-type: inline-size;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #FFF;
+  padding-bottom: 1rem;
 
   .navbar {
     display: flex;
