@@ -29,14 +29,19 @@
 	</p>
 
 
-	<div popover id={popoverId} class="popover-container">
+	<div popover
+       id={popoverId}
+       class="popover-container"
+       aria-modal="true"
+       aria-labelledby="popover-{popoverId}"
+  >
 		<div class="progress-bar"></div>
 
 		{#if image}
 			<img class="article-picture" src={image} alt="article picture" />
 		{/if}
 
-		<h1 class="popover-header">
+		<h1 class="popover-header" id="popover-{popoverId}">
 			{title}
 		</h1>
 		<p class="popover-paragraph">
@@ -96,6 +101,10 @@
         animation: background-animation linear;
         overflow-y: auto;
         scroll-timeline: --popover-scroll-timeline block;
+
+        &:popover-open {
+          pointer-events: auto;
+        }
 
 				.popover-header {
 						font-size: 2rem;
