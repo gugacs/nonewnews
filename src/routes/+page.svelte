@@ -36,6 +36,10 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	}
 
+  :global(body:has([popover]:popover-open)) {
+    overflow: hidden;
+  }
+
 	.main-content {
 		display: flex;
 		flex-direction: column;
