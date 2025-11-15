@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {onMount} from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let title: string;
 	export let content: string;
@@ -13,7 +13,6 @@
 </script>
 
 <div class="main-container">
-
 	{#if image}
 		<img class="article-picture" src={image} alt="article picture" />
 	{/if}
@@ -28,13 +27,13 @@
 		{content}
 	</p>
 
-
-	<div popover
-       id={popoverId}
-       class="popover-container"
-       aria-modal="true"
-       aria-labelledby="popover-{popoverId}"
-  >
+	<div
+		popover
+		id={popoverId}
+		class="popover-container"
+		aria-modal="true"
+		aria-labelledby="popover-{popoverId}"
+	>
 		<div class="progress-bar"></div>
 
 		{#if image}
@@ -51,93 +50,96 @@
 </div>
 
 <style>
-    .main-container {
-        display: flex;
-				width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        scroll-timeline: --main-timeline;
+	.main-container {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		scroll-timeline: --main-timeline;
 
-				.article-header-button {
-            all: unset;
-            cursor: pointer;
-            display: block;
-            width: 100%;
-            text-align: center;
-				}
+		.article-header-button {
+			all: unset;
+			cursor: pointer;
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
 
-				.article-header:hover {
-						color: #646464;
-				}
+		.article-header:hover {
+			color: #646464;
+		}
 
-        .article-paragraph {
-						text-overflow: ellipsis;
-						margin: 0 1rem 0 1rem;
-            white-space: pre-wrap;
+		.article-paragraph {
+			text-overflow: ellipsis;
+			margin: 0 1rem 0 1rem;
+			white-space: pre-wrap;
 
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-        }
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+		}
 
-        .article-picture, .popover-picture {
-            width: 100%;
-            height: 10rem;
-            object-fit: cover;
-        }
-    }
+		.article-picture,
+		.popover-picture {
+			width: 100%;
+			height: 10rem;
+			object-fit: cover;
+		}
+	}
 
-		.popover-container {
-				width: 40%;
-        height: 80%;
-				flex-direction: column;
-				justify-content: center;
-        padding: 1rem;
-        border: 2rem solid white;
-				border-radius: 1rem;
-        animation: background-animation linear;
-        overflow-y: auto;
-        scroll-timeline: --popover-scroll-timeline block;
+	.popover-container {
+		width: 40%;
+		height: 80%;
+		flex-direction: column;
+		justify-content: center;
+		border: 1rem solid white;
+		border-radius: 1rem;
+		animation: background-animation linear;
+		overflow-y: auto;
+		scroll-timeline: --popover-scroll-timeline block;
 
-        &:popover-open {
-          pointer-events: auto;
-        }
+		&:popover-open {
+			pointer-events: auto;
+		}
 
-				.popover-header {
-						font-size: 2rem;
-						margin: 1rem;
-				}
+		.popover-header {
+			font-size: 2rem;
+			margin: 1rem;
+		}
 
-				.popover-paragraph {
-						font-size: 1.5rem;
-            white-space: pre-wrap;
-						margin: 0 1rem 0 1rem;
-				}
-    }
-    .popover-container::backdrop {
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(4px);
-    }
+		.popover-paragraph {
+			font-size: 1.5rem;
+			white-space: pre-wrap;
+			margin: 0 1rem 0 1rem;
+		}
+	}
+	.popover-container::backdrop {
+		background-color: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(4px);
+	}
 
-    .progress-bar {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0.5rem;
-        background-color: #4f4f4f;
-        transform-origin: left;
+	.progress-bar {
+		position: sticky;
+		top: -0.3rem;
+		left: 0;
+		width: 100%;
+		height: 0.2rem;
+		background-color: #4f4f4f;
+		transform-origin: left;
 
-        animation: grow-progress linear;
-        animation-timeline: --popover-scroll-timeline;
-    }
+		animation: grow-progress linear;
+		animation-timeline: --popover-scroll-timeline;
+	}
 
-    @keyframes grow-progress {
-        from { transform: scaleX(0); }
-        to   { transform: scaleX(1); }
-    }
-
+	@keyframes grow-progress {
+		from {
+			transform: scaleX(0);
+		}
+		to {
+			transform: scaleX(1);
+		}
+	}
 </style>
