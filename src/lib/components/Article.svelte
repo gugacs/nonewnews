@@ -95,7 +95,7 @@
 		height: 80%;
 		flex-direction: column;
 		justify-content: center;
-		border: 1rem solid white;
+		border: 0.5rem solid var(--popover-border-color);;
 		border-radius: 1rem;
 		animation: background-animation linear;
 		overflow-y: auto;
@@ -126,8 +126,8 @@
 		top: -0.3rem;
 		left: 0;
 		width: 100%;
-		height: 0.2rem;
-		background-color: #4f4f4f;
+		height: 0.4rem;
+		background-color: #646464;
 		transform-origin: left;
 
 		animation: grow-progress linear;

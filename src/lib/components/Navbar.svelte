@@ -59,7 +59,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #FFF;
+	background-color: var(--navbar-background);
   padding-bottom: 1rem;
 
   .navbar {
@@ -67,8 +67,10 @@
     align-items: center;
     justify-content: space-between;
     padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
-    border-bottom: 1px solid #000;
-    background-color: #FFF;
+		border-bottom: 0.1rem solid var(--border-color);
+		background-color: var(--navbar-background);
+		color: var(--text-color);
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     gap: clamp(0.5rem, 2vw, 1rem);
     position: relative;
   }
@@ -82,7 +84,7 @@
       font-family: 'Times New Roman', serif;
       font-weight: bold;
       font-size: clamp(1.25rem, 4vw + 0.5rem, 2rem);
-      color: #000;
+			color: var(--text-color);
       text-decoration: none;
       padding-right: 1.25rem;
       border-right: 1px solid #000;
@@ -92,13 +94,13 @@
        display: none;
        background: none;
        border: none;
-       color: #000;
+			 color: var(--text-color);
        cursor: pointer;
        padding: 0.25rem;
        transition: color 0.2s;
 
        &:hover {
-         color: #000000CC;
+				 color: var(--text-color);
        }
      }
   }
@@ -114,7 +116,7 @@
       font-family: 'Arial', sans-serif;
       font-size: clamp(0.6rem, 1.2vw + 0.3rem, 0.75rem);
       font-weight: 900;
-      color: #000;
+			color: var(--text-color);
       text-transform: uppercase;
       text-decoration: none;
       padding-right: 0.5rem;
@@ -123,7 +125,7 @@
       transition: color 0.2s;
 
       &:hover {
-        color: #00000099;
+				color: var(--text-color);
       }
 
       &:last-child {
@@ -144,12 +146,12 @@
       justify-content: center;
       width: clamp(28px, 6vw, 32px);
       height: clamp(28px, 6vw, 32px);
-      color: #000;
+      color: var(--text-color);
       text-decoration: none;
       transition: color 0.2s;
 
       &:hover {
-        color: #00000099;
+        color: var(--text-color);
       }
     }
 
@@ -158,9 +160,9 @@
       font-size: clamp(0.6rem, 1.2vw + 0.2rem, 0.75rem);
       padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.75rem, 3vw, 2rem);
       border-radius: 5rem 0 0 5rem;
-      border: 1px solid rgb(38, 92, 192);
-      background-color: rgb(38, 92, 192);
-      color: #FFF;
+      border: 0.1rem solid var(--primary-button-background);
+      background-color: var(--primary-button-background);
+      color: var(--primary-button-text);
       text-decoration: none;
       text-align: center;
       font-weight: bold;
@@ -179,7 +181,7 @@
 
   .title {
     padding: clamp(0.75rem, 2vw, 1rem);
-    border-bottom: 1px solid #000;
+    border-bottom: 0.1rem solid var(--border-color);
 
     h1 {
       margin: 0;
@@ -187,6 +189,7 @@
       font-size: clamp(1.5rem, 5vw + 0.5rem, 2.5rem);
       font-weight: bold;
       text-align: center;
+      color: var(--text-color);
     }
   }
 
@@ -194,7 +197,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    border-bottom: 1px solid #000;
+    border-bottom: 0.1rem solid var(--border-color);
     margin: 0 0.5rem;
     padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(0.5rem, 2vw, 1rem);
     gap: clamp(0.5rem, 2vw, 1rem);
@@ -204,7 +207,7 @@
       font-size: clamp(0.65rem, 1.2vw + 0.3rem, 0.75rem);
       font-weight: 900;
       text-transform: uppercase;
-      color: rgba(145, 37, 28);
+      color: var(--accent-color);
       text-wrap: nowrap;
       margin: 0;
     }
@@ -219,14 +222,14 @@
       a {
         font-family: 'Arial', sans-serif;
         font-size: clamp(0.6rem, 1.1vw + 0.25rem, 0.7rem);
-        color: #000;
+        color: var(--text-color);
         text-decoration: none;
         text-transform: uppercase;
         text-wrap: nowrap;
         font-weight: 600;
 
         &:hover {
-          color: #00000099
+          color: var(--text-color);
         }
       }
     }
@@ -245,8 +248,8 @@
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #FFF;
-        border: 1px solid #00000050;
+        background-color: var(--navbar-background);
+        border: 0.1rem solid var(--border-color);
         overflow: hidden;
         z-index: 100;
         flex-direction: column;
@@ -263,11 +266,11 @@
         a {
           padding: 0.75rem 1rem;
           border-right: none;
-          border-bottom: 1px solid #000;
+          border-bottom: 0.1rem solid var(--border-color);
           width: 100%;
 
           &:hover {
-            color: #00000099;
+            background-color: var(--border-color);
           }
         }
       }
