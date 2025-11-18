@@ -1,12 +1,21 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { articles } from '$lib/placeholder/articles';
 	import Article from '$lib/components/Article.svelte';
 	import { SunMoon } from '@lucide/svelte';
 
-	let lightTheme = true;
+	let isDarkTheme = false;
+
+	onMount(() => {
+		isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		document.documentElement.classList.toggle('dark', isDarkTheme);
+		document.documentElement.classList.toggle('light', !isDarkTheme);
+	});
 
 	const toggleTheme = () => {
-		lightTheme = !lightTheme;
+		isDarkTheme = !isDarkTheme;
+		document.documentElement.classList.toggle('dark', isDarkTheme);
+		document.documentElement.classList.toggle('light', !isDarkTheme);
 	};
 </script>
 
@@ -32,9 +41,38 @@
 
 <style>
 	:root {
-		color-scheme: light;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+		color-scheme: light dark;
+		font-family: 'Avenir', Helvetica, Arial, sans-serif;
+
+		--page-background: light-dark(#ffffff, #000000);
+		--card-background: light-dark(#f0f0f0, #383838);
+		--text-color: light-dark(#0f172a, #f1f5f9);
+		--border-color: light-dark(#000000, #f5f5f5);
+
+		--navbar-background: light-dark(#ffffff, #000000);
+		--trending-bar-background: light-dark(#ffffff, #000000);
+
+		--primary-button-background: light-dark(#2563eb, #3b82f6);
+		--primary-button-text: light-dark(#ffffff, #ffffff);
+
+		--popover-border-color: light-dark(#c8c8c8, #383838);
+
+		--accent-color: light-dark(#dc2626, #f87171);
 	}
+
+	:root.dark {
+		color-scheme: dark;
+	}
+
+	:root.light {
+		color-scheme: light;
+	}
+
+  :global(body) {
+    background-color: var(--page-background);
+    transition: background-color 0.2s ease-in-out;
+  }
+
 
   :global(body:has([popover]:popover-open)) {
     overflow: hidden;
@@ -47,6 +85,7 @@
 		container-type: inline-size;
 		width: 90%;
 		margin: auto;
+		color: var(--text-color);
 
 		.theme-settings {
 			display: flex;
@@ -60,6 +99,7 @@
 				background: none;
 				border: none;
 				cursor: pointer;
+				color: var(--text-color);
 			}
 		}
 
@@ -75,7 +115,7 @@
     .article-card {
       padding: 1rem;
       margin: 1rem;
-      background: #fafafa;
+			background: var(--card-background);
       border-radius: 1rem;
       transition: all 0.2s ease-in-out;
 
