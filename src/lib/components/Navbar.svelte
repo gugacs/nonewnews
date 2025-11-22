@@ -12,7 +12,7 @@
 <div class="header">
   <nav class="navbar">
     <div class="nav-left">
-      <a href="/" class="logo">N</a>
+      <a href="/" class="logo">NNN</a>
       <button class="burger-button" on:click={toggleMenu} aria-label="Toggle menu">
         {#if menuOpen}<X size="24" />{:else}<Menu size="24" />{/if}
       </button>
@@ -87,7 +87,7 @@
 			color: var(--text-color);
       text-decoration: none;
       padding-right: 1.25rem;
-      border-right: 1px solid #000;
+      border-right: 0.09rem solid #000;
     }
 
     .burger-button {
@@ -120,7 +120,7 @@
       text-transform: uppercase;
       text-decoration: none;
       padding-right: 0.5rem;
-      border-right: 1px solid #000;
+      border-right: 0.09rem solid #000;
       text-wrap: nowrap;
       transition: color 0.2s;
 
@@ -144,8 +144,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: clamp(28px, 6vw, 32px);
-      height: clamp(28px, 6vw, 32px);
+      width: clamp(1.5rem, 6vw, 2rem);
+      height: clamp(1.5rem, 6vw, 2rem);
       color: var(--text-color);
       text-decoration: none;
       transition: color 0.2s;
@@ -174,7 +174,7 @@
         font-size: clamp(0.55rem, 1vw + 0.2rem, 0.65rem);
         font-weight: normal;
         opacity: 0.9;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.05rem;
       }
     }
   }
@@ -235,7 +235,7 @@
     }
   }
 
-  @container (max-width: 1104px) {
+  @container (max-width: 70rem) {
     .navbar {
       flex-wrap: wrap;
 
@@ -277,7 +277,7 @@
     }
   }
 
-  @container (max-width: 512px) {
+  @container (max-width: 32rem) {
     .subscribe-button {
       br, span {
         display: none;

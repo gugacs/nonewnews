@@ -117,6 +117,7 @@
       margin: 1rem;
 			background: var(--card-background);
       border-radius: 1rem;
+			border: 0.1rem solid var(--popover-border-color);
       transition: all 0.2s ease-in-out;
 
       &:hover {
@@ -139,7 +140,7 @@
 			}
 		}
 
-    @container (max-width: 1104px) {
+    @container (max-width: 70rem) {
       .article-layout {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -155,7 +156,7 @@
       }
     }
 
-    @container (max-width: 512px) {
+    @container (max-width: 32rem) {
       .article-layout {
         grid-template-columns: repeat(1, 1fr);
       }

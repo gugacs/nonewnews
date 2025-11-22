@@ -87,6 +87,7 @@
 			width: 100%;
 			height: 10rem;
 			object-fit: cover;
+			border-radius: 0.5rem;
 		}
 	}
 
@@ -118,7 +119,7 @@
 	}
 	.popover-container::backdrop {
 		background-color: rgba(0, 0, 0, 0.5);
-		backdrop-filter: blur(4px);
+		backdrop-filter: blur(0.3rem);
 	}
 
 	.progress-bar {
