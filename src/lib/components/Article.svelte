@@ -128,7 +128,7 @@
 		left: 0;
 		width: 100%;
 		height: 0.4rem;
-		background-color: #646464;
+		background-color: #0064dc;
 		transform-origin: left;
 
 		animation: grow-progress linear;
