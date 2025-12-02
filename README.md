@@ -14,7 +14,7 @@ Simple demonstratic newspaper website to show the application of Modern CSS feat
 ```bash
 # Clone the repository
 git clone git@github.com:gugacs/nonewnews.git
-cd nonewnews
+cd nonewnews # Ensure you are in the project root
 
 # Prepare the frontend
 bun install # OR: npm install
@@ -29,14 +29,14 @@ bun install # OR: npm install
 **Development Mode**
 
 ```bash
-cd frontend
+cd nonewnews # Ensure you are in the project root
 bun run dev # Website Available at http://localhost:5173
 ```
 
 **Production Mode**
 
 ```bash
-cd frontend
+cd nonewnews # Ensure you are in the project root
 bun run build
 bun run preview # Website Available at http://localhost:4173
 ```
