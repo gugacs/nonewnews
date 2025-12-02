@@ -1,7 +1,4 @@
 import type { Article } from '$lib/types';
-import laptop_image from '$lib/assets/pexels-laptop.jpg'
-import glasses_image from '$lib/assets/pexels-glasses.jpg'
-import macbook_with_code_image from '$lib/assets/pexels-Macbook-with-code.jpg'
 
 export const articles: Article[] = [
 	{
@@ -14,7 +11,7 @@ export const articles: Article[] = [
 			'universally across any CSS property that accepts size values—not just height, but also width, padding,' +
 			'margin, and other sizing properties—making it a versatile solution for creating dynamic, content-aware' +
 			'animations.',
-		img: laptop_image,
+		img: "https://images.pexels.com/photos/4348401/pexels-photo-4348401.jpeg",
 		flag: 'main'
 	},
 	{
@@ -25,7 +22,7 @@ export const articles: Article[] = [
 			'entered by the user.' +
 			'This provides a native, CSS-only way to create form fields that adapt to their value, improving layout' +
 			'consistency and user experience without requiring manual resizing.',
-		img: macbook_with_code_image,
+		img: "https://images.pexels.com/photos/693859/pexels-photo-693859.jpeg",
 		flag: 'medium'
 	},
 	{
@@ -129,7 +126,7 @@ export const articles: Article[] = [
 			'progress is controlled by scrolling within a container. This opens up new, high-performance possibilities' +
 			'for interactive web experiences, such as parallax effects, progress indicators, or fading in elements as they' +
 			'enter the viewport.',
-		img: glasses_image,
+		img: "https://images.pexels.com/photos/18069696/pexels-photo-18069696.png",
 		flag: 'medium'
 	},
 	{

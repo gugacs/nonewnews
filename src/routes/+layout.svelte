@@ -12,4 +12,3 @@
 <Navbar />
 {@render children?.()}
 <Footer />
-

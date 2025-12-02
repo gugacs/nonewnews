@@ -19,15 +19,15 @@
     </div>
 
     <div class="links" class:open={menuOpen}>
-      <a href="/properties" on:click={closeMenu}>Properties</a>
-      <a href="/selectors" on:click={closeMenu}>Selectors</a>
-      <a href="/combinators" on:click={closeMenu}>Combinators</a>
-      <a href="/pseudo-classes" on:click={closeMenu}>Pseudo-classes</a>
-      <a href="/pseudo-elements" on:click={closeMenu}>Pseudo-elements</a>
-      <a href="/at-rules" on:click={closeMenu}>At-rules</a>
-      <a href="/values" on:click={closeMenu}>Values</a>
-      <a href="/types" on:click={closeMenu}>Types</a>
-      <a href="/functions" on:click={closeMenu}>Functions</a>
+      <a href="/" on:click={closeMenu}>Properties</a>
+      <a href="/" on:click={closeMenu}>Selectors</a>
+      <a href="/" on:click={closeMenu}>Combinators</a>
+      <a href="/" on:click={closeMenu}>Pseudo-classes</a>
+      <a href="/" on:click={closeMenu}>Pseudo-elements</a>
+      <a href="/" on:click={closeMenu}>At-rules</a>
+      <a href="/" on:click={closeMenu}>Values</a>
+      <a href="/" on:click={closeMenu}>Types</a>
+      <a href="/" on:click={closeMenu}>Functions</a>
     </div>
 
     <div class="ctas">
