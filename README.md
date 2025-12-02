@@ -1,38 +1,48 @@
-# sv
+<h1 align="center">📰 No New News 📰</h1>
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Simple demonstratic newspaper website to show the application of Modern CSS featues in order to optimize and simplify modern web development.
 
-## Creating a project
+## 🚀 Getting Started
 
-If you're seeing this, you've probably already done this step. Congrats!
+### 💻 Prerequisites
 
-```sh
-# create a new project in the current directory
-npx sv create
+- Git
+- Bun.js (OR: npm & node)
 
-# create a new project in my-app
-npx sv create my-app
+### 📦 Installation
+
+```bash
+# Clone the repository
+git clone git@github.com:gugacs/nonewnews.git
+cd nonewnews
+
+# Prepare the frontend
+bun install # OR: npm install
 ```
 
-## Developing
+## 🛠️ Tech Stack
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- Frontend: SvelteKit & TypeScript
 
-```sh
-npm run dev
+### ⚙️ Running
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+**Development Mode**
+
+```bash
+cd frontend
+bun run dev # Website Available at http://localhost:5173
 ```
 
-## Building
+**Production Mode**
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+cd frontend
+bun run build
+bun run preview # Website Available at http://localhost:4173
 ```
 
-You can preview the production build with `npm run preview`.
+## 📝 License
+MIT License (see [License file](LICENSE))
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+---
+Made with ❤️ by [Christian](https://github.com/Chryschii), [Jonas](https://github.com/jonas-g-laser), [Marcus](https://www.github.com/gugacs), [Eva](https://github.com/evaharing)
