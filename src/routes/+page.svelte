@@ -133,12 +133,12 @@
       }
     }
 
-		@supports (display: masonry) {
-			.article-layout {
-        display: masonry;
-				grid-template-rows: masonry;
-			}
-		}
+    @supports (grid-template-rows: masonry) {
+      .article-layout {
+        display: grid;
+        grid-template-rows: masonry;
+      }
+    }
 
     @container (max-width: 70rem) {
       .article-layout {
