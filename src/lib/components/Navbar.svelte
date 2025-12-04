@@ -1,5 +1,7 @@
 <script lang="ts">
   import { Search, Menu, X } from '@lucide/svelte';
+  import { base } from '$app/paths';
+
   let menuOpen = false;
   const closeMenu = () => {
     menuOpen = false;
@@ -12,27 +14,27 @@
 <div class="header">
   <nav class="navbar">
     <div class="nav-left">
-      <a href="/" class="logo">NNN</a>
+      <a href="{base}/" class="logo">NNN</a>
       <button class="burger-button" on:click={toggleMenu} aria-label="Toggle menu">
         {#if menuOpen}<X size="24" />{:else}<Menu size="24" />{/if}
       </button>
     </div>
 
     <div class="links" class:open={menuOpen}>
-      <a href="/" on:click={closeMenu}>Properties</a>
-      <a href="/" on:click={closeMenu}>Selectors</a>
-      <a href="/" on:click={closeMenu}>Combinators</a>
-      <a href="/" on:click={closeMenu}>Pseudo-classes</a>
-      <a href="/" on:click={closeMenu}>Pseudo-elements</a>
-      <a href="/" on:click={closeMenu}>At-rules</a>
-      <a href="/" on:click={closeMenu}>Values</a>
-      <a href="/" on:click={closeMenu}>Types</a>
-      <a href="/" on:click={closeMenu}>Functions</a>
+      <a href="{base}/" on:click={closeMenu}>Properties</a>
+      <a href="{base}/" on:click={closeMenu}>Selectors</a>
+      <a href="{base}/" on:click={closeMenu}>Combinators</a>
+      <a href="{base}/" on:click={closeMenu}>Pseudo-classes</a>
+      <a href="{base}/" on:click={closeMenu}>Pseudo-elements</a>
+      <a href="{base}/" on:click={closeMenu}>At-rules</a>
+      <a href="{base}/" on:click={closeMenu}>Values</a>
+      <a href="{base}/" on:click={closeMenu}>Types</a>
+      <a href="{base}/" on:click={closeMenu}>Functions</a>
     </div>
 
     <div class="ctas">
-      <a href="/" class="search-button"><Search size="20"/></a>
-      <a href="/" class="subscribe-button">
+      <a href="{base}/" class="search-button"><Search size="20"/></a>
+      <a href="{base}/" class="subscribe-button">
         Subscribe Now<br/><span>Starting at $1</span>
       </a>
     </div>
@@ -43,9 +45,9 @@
   <div class="trending">
     <h2>Trending:</h2>
     <div class="topics">
-      <a href="/">Trending Topic 1</a>
-      <a href="/">Trending Topic 2</a>
-      <a href="/">Trending Topic 3</a>
+      <a href="{base}/">Trending Topic 1</a>
+      <a href="{base}/">Trending Topic 2</a>
+      <a href="{base}/">Trending Topic 3</a>
     </div>
   </div>
 </div>
