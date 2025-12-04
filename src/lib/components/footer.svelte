@@ -1,6 +1,7 @@
 <!-- src/lib/components/Footer.svelte -->
 <script lang="ts">
   import { Facebook, Twitter, Instagram } from '@lucide/svelte';
+  import { base } from '$app/paths';
 </script>
 
 
@@ -15,52 +16,52 @@
       <div class="link-column">
         <h3>Subscribe Now</h3>
         <ul>
-          <li><a href="/">Digital Access</a></li>
-          <li><a href="/">Home Delivery</a></li>
-          <li><a href="/">Gift Subscription</a></li>
+          <li><a href="{base}/">Digital Access</a></li>
+          <li><a href="{base}/">Home Delivery</a></li>
+          <li><a href="{base}/">Gift Subscription</a></li>
         </ul>
       </div>
       <div class="link-column">
         <h3>Account</h3>
         <ul>
-          <li><a href="/">My Account</a></li>
-          <li><a href="/">Manage Account</a></li>
-          <li><a href="/">Help Center</a></li>
+          <li><a href="{base}/">My Account</a></li>
+          <li><a href="{base}/">Manage Account</a></li>
+          <li><a href="{base}/">Help Center</a></li>
         </ul>
       </div>
       <div class="link-column">
         <h3>Contact</h3>
         <ul>
-          <li><a href="/">Contact Us</a></li>
-          <li><a href="/">Advertise</a></li>
-          <li><a href="/">Careers</a></li>
+          <li><a href="{base}/">Contact Us</a></li>
+          <li><a href="{base}/">Advertise</a></li>
+          <li><a href="{base}/">Careers</a></li>
         </ul>
       </div>
       <div class="link-column">
         <h3>More</h3>
         <ul>
-          <li><a href="/">Newsletters</a></li>
-          <li><a href="/">ePaper</a></li>
-          <li><a href="/">Archives</a></li>
+          <li><a href="{base}/">Newsletters</a></li>
+          <li><a href="{base}/">ePaper</a></li>
+          <li><a href="{base}/">Archives</a></li>
         </ul>
       </div>
     </div>
   </div>
-  
+
   <!------------------------------------------------------------------------>
   <!-- ... footer-bottom ... -->
   <!------------------------------------------------------------------------>
   <div class="footer-bottom">
     <div class="social-media">
-      <a href="/" aria-label="Facebook" class="social-icon"><Facebook size={20} /></a>
-      <a href="/" aria-label="Twitter" class="social-icon"><Twitter size={20} /></a>
-      <a href="/" aria-label="Instagram" class="social-icon"><Instagram size={20} /></a>
+      <a href="{base}/" aria-label="Facebook" class="social-icon"><Facebook size={20} /></a>
+      <a href="{base}/" aria-label="Twitter" class="social-icon"><Twitter size={20} /></a>
+      <a href="{base}/" aria-label="Instagram" class="social-icon"><Instagram size={20} /></a>
     </div>
     <div class="copyright">
       <p>&copy; 2024 NoNewNews Media Partners, LLC</p>
       <ul>
-        <li><a href="/">Privacy Policy</a></li>
-        <li><a href="/">Terms of Service</a></li>
+        <li><a href="{base}/">Privacy Policy</a></li>
+        <li><a href="{base}/">Terms of Service</a></li>
       </ul>
     </div>
   </div>
@@ -207,7 +208,7 @@
     inherits: false;
     initial-value: 1.5;
   }
-  
+
   /*------------------------------------------------------------------------*/
   /* light-dark() - Automatic Theme Switching */
   /*------------------------------------------------------------------------*/
@@ -237,7 +238,7 @@
   .nonewnews-footer a:hover {
     text-decoration: underline;
   }
-  
+
   .footer-top {
     position: relative;
     padding: 0.5rem 0;
@@ -307,7 +308,7 @@
     /* !! max() & min() !! - Link font size stays between 0.8rem and 0.9rem */
     font-size: max(0.8rem, min(0.9rem, 2vw));
   }
-  
+
   .social-media {
     display: flex;
     /* !! max() !! - Gap doesn't go below 0.75rem */
@@ -327,7 +328,7 @@
   .social-icon:hover {
     background-color: light-dark(var(--social-hover-light), var(--social-hover-dark));
   }
-  
+
   .copyright {
     /* !! max() & min() !! - Font size stays between 0.65rem and 0.75rem */
     font-size: max(0.65rem, min(0.75rem, 1.8vw));
